@@ -1,0 +1,19 @@
+body, input, button {
+
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: aliceblue;
+    padding: 50px;
+}
+
+button {
+    cursor: pointer;
+
+}
+
+button {
+    width: 100px;
+}
+
