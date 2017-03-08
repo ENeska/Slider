@@ -1,35 +1,33 @@
-var buttonR = document.getElementById("right");
-var buttonL = document.getElementById("left");
+var next = document.getElementById("right");
+var prev = document.getElementById("left");
+
+var viewer = document.getElementById("viewer");
+var images = [];
+var image;
+
+
+for (var l = 0; l < 8; l++) {
+
+    image = new Image();
+    image.src = './img/hex' + l + '.png';
+    images.push(image);
+}
+
 var i=0;
-buttonR.addEventListener("click", function rightGallery() {
 
-        var start = document.getElementById("zdj");
+next.addEventListener("click", function() {
 
-        var i_right= i+1;
-        if (i>8) i_right=1;
+    (i == images.length-1) ? i = 0 : i++;
+    viewer.src = images[i].src;
 
-        var image ="<img src=\"img/hex" + i_right + ".png\">";
-        start.innerHTML = image;
+});
 
-        i = i_right;
+prev.addEventListener("click", function() {
 
-})
+    (i == 0) ? i = images.length-1 : i--;
+    viewer.src = images[i].src;
 
-
-buttonL.addEventListener("click", function leftGallery() {
-
-    var start = document.getElementById("zdj");
-
-    var i_left =i-1;
-    if (i<1) i_left=9;
-
-    var image ="<img src=\"img/hex" + i_left + ".png\">";
-    start.innerHTML = image;
-
-    i = i_left;
-
-})
-
+});
 
 
 
